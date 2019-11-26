@@ -10592,7 +10592,7 @@ a:focus {
 .bg-register-image {
   background: url("http://shop.atm23.net/image/cache/catalog/Vinyls/nrt28b-300x300.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: auto;
 }
 
 .bg-password-image {
