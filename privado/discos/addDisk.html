@@ -10,20 +10,15 @@
   <meta name="author" content="">
   <base href="/">
 
-  <title>Discos listar</title>
+  <title>SB Admin 2 - Dashboard</title>
 
-  <!-- Custom fonts for this template -->
+  <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/custom.css">
-  
 </head>
 
 <body id="page-top">
@@ -282,62 +277,109 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        
+            <div class="col-lg-12 mb-4">
 
-         
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Cover</th>
-                      <th>Titulo</th>
-                      <th>Grupo</th>
-                      <th>Fecha</th>
-                    </tr>
-                  </thead> <!--FIN DEL HEAD DE LA TABLA-->
-                  <tfoot>
-                    <tr>
-                      <th>Id</th>
-                      <th>Cover</th>
-                      <th>Titulo</th>
-                      <th>Grupo</th>
-                      <th>Fecha</th>
-                    </tr>
-                  </tfoot> <!--FIN DEL FOOT DE LA TABLA-->
-                  <tbody>
-                    <tr>
-                      <td>23</td>
-                      <td><img src="https://img.discogs.com/ImqOFg6UgUHCdFFTbKbWe2uwFG0=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4907698-1381446149-8428.jpeg.jpg" w
-                        alt="Vinilo de 013" class ="rounded-circle"></td>
-                      <td>Neurotrope 025</td>
-                      <td>013</td>
-                      <td>2013</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>47</td>
-                      <td><img src="https://img.discogs.com/Gud4pOvhvxSY_K8CkHzgk1dQi2g=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7000670-1431555358-5677.jpeg.jpg" 
-                        alt="Vinilo de kunda" class ="rounded-circle"></td>
-                      <td>Kunda 01</td>
-                      <td>Kunda</td>
-                      <td>2015</td>
-                    </tr>
-                    <tr>
-                      <td>736</td>
-                      <td><img src="https://img.discogs.com/rAaaXPV2p05R5IR1tF7o6ux8bTk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8480288-1570212499-9210.jpeg.jpg" 
-                        alt="Vinilo de DDM" class ="rounded-circle"></td>
-                      <td>DDM 003</td>
-                      <td>DDM</td>
-                      <td>01/05/2016</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                      <!-- Nested Row within Card Body -->
+                      <div class="row">
+                        <div class="col-lg-5 d-none d-lg-block bg-register-image"  id ="container-img"></div>
+                        <div class="col-lg-7">
+                          <div class="p-5">
+                            <div class="text-center">
+                              <h1 class="h4 text-gray-900 mb-4">Registra un nuevo disco!</h1>
+                            </div>
+                            <!-- Begin of Form -->
+                            <form class="user" action="URL_CONTROLADOR" method="POST">
+
+                              <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                  <label for="cover">*Cover</label>
+                                  <input type="text/url" name = "cover"
+                                  onblur="cargarImagen(event, this.value)"
+                                   class="form-control form-control-user" 
+                                   required
+                                   pattern="(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|gif|png|jpeg))(?:\?([^#]*))?(?:#(.*))?" 
+                                  placeholder="Url de la imagen, formato jp(e)g, gif, png">
+                                </div>
+                                
+                              </div>
+
+                              <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <label for="Titulo">*Titulo</label>
+                                        <input type="text/url" name = "titulo"
+                                         class="form-control form-control-user" 
+                                         required
+                                         pattern=".{1,100}" 
+                                        placeholder="Titulo">
+                                      
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                    <div class="col-sm-12 mb-6 mb-sm-3">
+
+                                    <label for="grupo">*Grupo</label>
+                                    <input type="text/url" name = "grupo"
+                                     class="form-control form-control-user" 
+                                     required
+                                     pattern=".{1,100}" 
+                                    placeholder="Grupo">
+                                    </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <div class="col-sm-12 mb-6 mb-sm-3">
+                                    <label for="Fecha">*Fecha</label>
+                                  <input type="date" name ="fecha"
+                                   class="form-control form-control-user" 
+                                  pattern ="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d"
+                                   required
+                                   >
+                                </div>
+                                
+                              </div>
+                              
+                                <input type="submit" value="Registra el disco" class="btn btn-primary btn-user btn-block">
+                                
+
+                              <hr>
+                              
+                            </form>
+                                
+                            <!-- END OF FORM -->
+                          </div>
+
+                          
+
+                          <script>
+                                function cargarImagen(event){
+
+                                    console.debug('evento %o', event);
+                                    console.debug('url %o', event.target.value);
+
+                                    let container = document.getElementById('container-img');
+                                    //let image = '<img src = "${url}"  alt = "imagen del disco" style="width: 100%; height: 100%;">'
+                                    let image = '<img src = "'+event.target.value+'"  alt = "imagen del disco " style="width: auto; height: auto;>'
+                                    //Cambiamos estilos del contenedor en linea
+                                    container.style.background = "url("+event.target.value+")";
+                                }
+                            </script>
+
+                            
+                        </div>
+
+                        <!-- END OF COL-SM6 -->
+
+                        
+
+                      </div>
+                    </div>
+              
+
             </div>
           </div>
 
@@ -347,14 +389,14 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
+      <!-- Footer 
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2019</span>
           </div>
         </div>
-      </footer>
+      </footer>-->
       <!-- End of Footer -->
 
     </div>
@@ -373,15 +415,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Seguro que quieres salir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Cerraremos la sesion para tu usuario</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="/index.html">Logout</a>
         </div>
       </div>
     </div>
@@ -398,11 +440,11 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/datatables-custom.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

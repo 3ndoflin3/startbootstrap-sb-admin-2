@@ -10,20 +10,15 @@
   <meta name="author" content="">
   <base href="/">
 
-  <title>Discos listar</title>
+  <title>SB Admin 2 - Dashboard</title>
 
-  <!-- Custom fonts for this template -->
+  <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/custom.css">
-  
 </head>
 
 <body id="page-top">
@@ -72,7 +67,7 @@
             <a class="collapse-item" href="/privado/discos/index.html">     <i class="fas fa-compact-disc"></i>
               Ver discos</a>
 
-            <a class="collapse-item" href="/privado/discos/addDisk.html"> <i class="fas fa-plus-circle"></i>
+            <a class="collapse-item" href="/privado/discos/formulario.html"> <i class="fas fa-plus-circle"></i>
               Añadir disco</a>
           </div>
         </div>
@@ -282,62 +277,12 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        
+            <div class="col-lg-6 mb-4">
 
-         
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Cover</th>
-                      <th>Titulo</th>
-                      <th>Grupo</th>
-                      <th>Fecha</th>
-                    </tr>
-                  </thead> <!--FIN DEL HEAD DE LA TABLA-->
-                  <tfoot>
-                    <tr>
-                      <th>Id</th>
-                      <th>Cover</th>
-                      <th>Titulo</th>
-                      <th>Grupo</th>
-                      <th>Fecha</th>
-                    </tr>
-                  </tfoot> <!--FIN DEL FOOT DE LA TABLA-->
-                  <tbody>
-                    <tr>
-                      <td>23</td>
-                      <td><img src="https://img.discogs.com/ImqOFg6UgUHCdFFTbKbWe2uwFG0=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4907698-1381446149-8428.jpeg.jpg" w
-                        alt="Vinilo de 013" class ="rounded-circle"></td>
-                      <td>Neurotrope 025</td>
-                      <td>013</td>
-                      <td>2013</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>47</td>
-                      <td><img src="https://img.discogs.com/Gud4pOvhvxSY_K8CkHzgk1dQi2g=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7000670-1431555358-5677.jpeg.jpg" 
-                        alt="Vinilo de kunda" class ="rounded-circle"></td>
-                      <td>Kunda 01</td>
-                      <td>Kunda</td>
-                      <td>2015</td>
-                    </tr>
-                    <tr>
-                      <td>736</td>
-                      <td><img src="https://img.discogs.com/rAaaXPV2p05R5IR1tF7o6ux8bTk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8480288-1570212499-9210.jpeg.jpg" 
-                        alt="Vinilo de DDM" class ="rounded-circle"></td>
-                      <td>DDM 003</td>
-                      <td>DDM</td>
-                      <td>01/05/2016</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+
+              
+
             </div>
           </div>
 
@@ -373,15 +318,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Seguro que quieres salir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Cerraremos la sesion para tu usuario</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="/index.html">Logout</a>
         </div>
       </div>
     </div>
@@ -398,11 +343,11 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/datatables-custom.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
